@@ -20,6 +20,9 @@ ln -s -f /usr/lib/libnss_mdns-0.2.so /usr/lib/libnss_mdns.so.2
 cp mDNSPosix/nss_mdns.conf /etc/nss_mdns.conf
 cp -f /etc/nsswitch.conf /etc/nsswitch.conf.pre-mdns
 sed -e '/mdns/!s/^\(hosts:.*\)dns\(.*\)/\1mdns dns\2/' /etc/nsswitch.conf.pre-mdns > /etc/nsswitch.conf
+cd ../
+cp mdnsd-services.conf /etc/mdnsd-services.conf
+cp mdnsd.conf /etc/mdns.conf
 
 systemctl stop avahi-daemon
 systemctl disable avahi-deamon
