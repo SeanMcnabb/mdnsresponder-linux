@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mDNSResponderVersion=mDNSResponder-1310.80.1
-docker run -it --rm -v "$(pwd)":/src -w /src ubuntu_build /bin/bash -c "
+docker run -it --rm -v "$(pwd)":/src -w /src ubuntu /bin/bash -c "
     ls ;
     echo $mDNSResponderVersion ;
     wget --no-check-certificate https://opensource.apple.com/tarballs/mDNSResponder/$mDNSResponderVersion.tar.gz ;
